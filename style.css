@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(7, 100px);
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background-color: #3f8ca7;
+    padding: 10px;
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #f4f7f7;
+}
+
+.slot.player1 .hole {
+    background-color: #35393f;
+}
+
+.winnercontainer {
+    display: none;
+    position: absolute;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    animation-name: winnercontainer;
+    animation-duration: 10s;
+    animation: winnercontainer 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-iteration-count: infinite;
+}
+
+.winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+}
+
+.slot.player2 .hole {
+    background-color: #c23549;
+}
+
+.mainscore {
+    display: flex;
+    justify-content: center;
+    color: #f4f7f7;
+}
+.score1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #35393f;
+}
+
+.score2 {
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #c23549;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 auto;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+@keyframes winnercontainer {
+    0% {
+        background-color: #40a7a2;
+    }
+    25% {
+        background-color: #052a49;
+    }
+    50% {
+        background-color: #faf3d0;
+    }
+    100% {
+        background-color: #dbc782;
+    }
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 200px, 0);
+    }
+}
